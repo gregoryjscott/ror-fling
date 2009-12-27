@@ -3,7 +3,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>herwiggy - <%= @title %></title>
+	<title><%= title %></title>
+	<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+	<%= stylesheet_link_tag 'blueprint/print', :media => 'screen' %>
 </head>
 <body>
 	<%= yield %>
