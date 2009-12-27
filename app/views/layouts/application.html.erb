@@ -4,10 +4,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title><%= title %></title>
-	<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-	<%= stylesheet_link_tag 'blueprint/print', :media => 'screen' %>
-</head>
+		<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+		<%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+		<!--[if lt IE 8]>
+		<%= stylesheet_link_tag 'blueprint/print', :media => 'screen' %>
+		<![endif]-->
+		<%= stylesheet_link_tag 'custom', :media => 'screen' %>
+	</head>
 <body>
-	<%= yield %>
+	<div class="container">
+		<div id="header">
+			<ul class="navigation round">
+				<li><%= link_to "skis", skis_url %></li>
+				<li><%= link_to "construction", construction_url %></li>
+				<li><%= link_to "about", about_url %></li>
+				<li><%= link_to "contact", contact_url %></li>
+			</ul>
+
+			<%= link_to image_tag("logo.png", :alt => "herwiggy"), root_url %>
+			
+			<p style="color: green"><%= flash[:notice] %></p>
+		</div>
+		
+		<div id="content">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
