@@ -1,3 +1,3 @@
 # ruby-playground
 
-Website that hit a dead-end, but I learned some ROR in the process.
+Website that hit a dead-end, but I learned some ROR.
